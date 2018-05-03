@@ -1,0 +1,44 @@
+<mat-card>
+    <mat-card-title>General Settings</mat-card-title>
+    <mat-card-content>
+      <form class="example-form">
+        <div class="row">
+          <mat-form-field class="col-md-2">
+            <mat-select placeholder="Select year" [(ngModel)]="selectedValue" name="year">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="col-md-2">
+            <mat-select placeholder="Select grade" [(ngModel)]="selectedValue" name="grade">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="col-md-3">
+            <mat-select placeholder="Select name" [(ngModel)]="selectedValue" name="year">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="col-md-3">
+            <mat-select placeholder="Select subject" [(ngModel)]="selectedValue" name="year">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="col-md-2">
+            <mat-select placeholder="Select term" [(ngModel)]="selectedValue" name="year">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>

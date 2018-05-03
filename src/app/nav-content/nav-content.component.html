@@ -1,0 +1,52 @@
+<div class='nav-content'>
+  <!-- start: page heading -->
+  <h3>{{navItem.text}}
+    <button mat-raised-button type="button" class="btn btn-primary waves-light pull-right" (click)="openDialog()">
+      <mat-icon aria-hidden="true">add</mat-icon>
+      <span>Add container</span>
+    </button>
+  </h3>
+  <!-- end: page heading -->
+
+  <!-- start: bread crumb -->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#">Home</a>
+    </li>
+    <li class="breadcrumb-item active">{{navItem.text}}</li>
+  </ol>
+  <!-- end: bread crumb -->
+
+  <!-- start: General settings -->
+  <app-general-settings></app-general-settings>
+
+  <!-- start: Components -->
+  <mat-card>
+    <mat-card-title>Components</mat-card-title>
+    <mat-card-content>
+      <!--Content to display when no compoents are present-->
+      <div class="text-muted align-center" *ngIf="components && components.length == 0">
+        <a>
+          <mat-icon class="empty-tray">play_for_work</mat-icon>
+        </a>
+        <h4>No components yet</h4>
+        Create and configure components for which teachers will be entering marks.
+      </div>
+      <!--Content to display when components exist-->
+      <div class="component-container" *ngIf="components && components.length > 0">
+          <mat-card class="component-card" *ngFor="let component of components">
+            <mat-card-content>
+              <h6>
+                {{component.componentLabel}}
+                <button mat-button (click)="openDialog(component)" class="pull-right">
+                  <mat-icon>settings</mat-icon>
+                </button>
+              </h6>
+            </mat-card-content>
+          </mat-card>
+        </div>            
+    </mat-card-content>
+  </mat-card>
+  <!-- end: Components -->
+
+</div>

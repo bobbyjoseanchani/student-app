@@ -1,0 +1,32 @@
+.nav-content{
+    margin: 10px;
+    min-height: 600px;
+}
+.breadcrumb{
+    background-color: transparent;
+}
+.mat-card{
+    margin-bottom: 15px !important;
+}
+.empty-tray{
+    font-size: 48px; 
+}
+.align-center{
+    text-align: center;
+}
+.full-width {
+    width: 100%;
+}
+.component-card{
+    width: 300px; 
+    margin: 10px;
+}
+.component-title{
+    display: flex !important;
+    flex-flow: row wrap;
+}
+
+.component-container {
+    display: flex !important;
+    flex-flow: row wrap;
+}

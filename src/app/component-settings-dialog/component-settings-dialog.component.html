@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Component Settings</h1>
+<div mat-dialog-content>
+  <form (ngSubmit)="onSubmit()" [formGroup]="componentForm">
+    <mat-form-field>
+      <input matInput placeholder="Component Label" formControlName="componentLabel" >
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Component Description" formControlName="componentDesc"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Component Type" formControlName="componentType">
+        <mat-option *ngFor="let option of selectOptions" [value]="option.value">
+          {{option.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Assessment Group" formControlName="assessmentGroup">
+        <mat-option *ngFor="let option of selectOptions" [value]="option.value">
+          {{option.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Data Type" formControlName="dataType">
+        <mat-option *ngFor="let option of selectOptions" [value]="option.value">
+          {{option.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Maximum Score" formControlName="maxScore">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Passing Score" formControlName="passingScore">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Calculation Methode" formControlName="calcMethode">
+        <mat-option *ngFor="let option of selectOptions" [value]="option.value">
+          {{option.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  <p>Form value: {{ componentForm.value | json }}</p>
+<p>Form status: {{ componentForm.status | json }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="deleteComponent()">Delete Component</button>
+  <button mat-raised-button color="primary" (click)="saveComponent()">Save Component</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data.animal" cdkFocusInitial>close</button>
+</div>

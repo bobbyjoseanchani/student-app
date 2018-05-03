@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  navOpenFlag: boolean;
+
+  public toggeleSideNav() {
+    this.navOpenFlag = !this.navOpenFlag;
+  }
 }
